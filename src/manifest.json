@@ -1,0 +1,53 @@
+{
+  "applications": {
+    "gecko": {
+      "id": "{xxxxxxxx-9c61-41e5-a0f1-5e40c0ff5f9f}"
+    }
+  },
+
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "version": "0.0.1",
+
+  "default_locale": "ja",
+  "description": "__MSG_extensionDescription__",
+  "icons": {"128": "icon128.png"},
+
+  "browser_action": {
+    "default_icon": "icon128.png",
+    "default_title": "英辞郎 On the Web Pro プラス",
+    "default_popup": "popup/index.html"
+  },
+
+  "background": {
+    "scripts": [
+      "background/index.setup.js",
+      "background/index.js"
+    ]
+  },
+
+  "author": "Hinaser",
+  "content_scripts": [{
+    "matches": ["*://eowp.alc.co.jp/*"],
+    "js": [
+      "content-script/gatherWords.js",
+      "content-script/eowp-plus/static/js/runtime-main.681e02fd.js",
+      "content-script/eowp-plus/static/js/2.c8a507c3.chunk.js",
+      "content-script/eowp-plus/static/js/main.0a4a8fc5.chunk.js",
+      "content-script/index.lib.js",
+      "content-script/index.js"
+    ],
+    "run_at": "document_idle"
+  }],
+  "homepage_url": "https://github.com/Hinaser",
+  "incognito": "spanning",
+  "minimum_chrome_version": "47",
+  "offline_enabled": false,
+  "permissions": [
+    "storage",
+    "*://*/*"
+  ],
+  "short_name": "ejr-test",
+  "version_name": "1.0.0",
+  "web_accessible_resources": []
+}

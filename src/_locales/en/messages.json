@@ -1,0 +1,13 @@
+{
+  "extensionName": {
+    "message": "英辞郎 On The Web Pro プラス(非公式)",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "英辞郎On the Web Proの単語帳に登録した英単語を選択問題形式で復習できるアプリです。このアプリを利用するためには事前に有料の英辞郎On the Web Proの契約が必要です",
+    "description": "Description of the extension."
+  },
+  "homepageUrl": {
+    "message": "https://github.com/Hinaser"
+  }
+}
