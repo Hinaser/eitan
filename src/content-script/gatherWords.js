@@ -1,7 +1,5 @@
 function getWordWithKanaTrimmed(el){
-  const cloneEl = el.cloneNode(true);
-  cloneEl.innerHTML = cloneEl.innerHTML.replace(new RegExp('<span class="kana">.+</span>', "g"), "");
-  return cloneEl.innerText;
+  return el.innerText;
 }
 
 function generateWordList(rootEl = document){
@@ -70,13 +68,25 @@ function generateWordList(rootEl = document){
   return WordList;
 }
 
+function isWordMeansEqual(w1, w2){
+  return w1.wordMeans.length === w2.wordMeans.length && w1.wordMeans.every((wm1, i) => {
+    return wm1.mean === w2.wordMeans[i].mean;
+  })
+}
+
 function gatherAndStoreWordList(rootEl = document){
   let wl = generateWordList(rootEl);
   
   const savedWlStr = localStorage.getItem("wordList");
   if(savedWlStr){
     const savedWl = JSON.parse(savedWlStr);
-    wl = savedWl.concat(wl).filter((w, i, arr) => i === arr.findIndex(w2 => w2.word === w.word));
+    wl = savedWl
+      .concat(wl)
+      .filter((w, i, arr) => {
+        return i === arr.findIndex(w2 => {
+          return w2.word === w.word && isWordMeansEqual(w, w2);
+        });
+      });
   }
   
   const wlStr = JSON.stringify(wl);

@@ -7,13 +7,24 @@ async function loadPage(pageIndex){
   const page = await fetchPage(pageIndex);
   const domParser = new DOMParser();
   const documentFragment = domParser.parseFromString(page, "text/html");
-  gatherAndStoreWordList(documentFragment);
+  if(isLoggedIn(documentFragment)){
+    gatherAndStoreWordList(documentFragment);
+  }
+}
+
+function isLoggedIn(docFragment){
+  return !docFragment.querySelector("#fmLogin");
 }
 
 async function getSummary(){
   const page = await fetchPage(1);
   const domParser = new DOMParser();
   const documentFragment = domParser.parseFromString(page, "text/html");
+  
+  if(!isLoggedIn(documentFragment)){
+    return false;
+  }
+  
   const enlistedWordsEl = documentFragment.querySelector("#tabcontent > p > span.bold");
   const wordsListed = enlistedWordsEl.innerText;
   const checkBoxes = Array.from(documentFragment.querySelectorAll("#wordlist input[type='checkbox'].word_chk"));
@@ -45,11 +56,11 @@ function isUpdated(prevSummary, summary){
   return prevAllWords !== allWords || prevLastCreated !== lastCreated;
 }
 
-async function syncWordList(){
+async function syncWordList(force = false){
   const prevSummary = (await getData("summary")) || {lastCreated: "", allWords: 0};
   const summary = await getSummary();
   
-  if(!isUpdated(prevSummary, summary)){
+  if(!summary || (!force && !isUpdated(prevSummary, summary))){
     return;
   }
   
