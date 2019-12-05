@@ -42,6 +42,7 @@
   "offline_enabled": false,
   "permissions": [
     "storage",
+    "tabs",
     "*://*/*"
   ],
   "short_name": "ejr-test",

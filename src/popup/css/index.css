@@ -1,17 +1,54 @@
 html {
   padding: 0;
   margin: 0;
-  width: 400px;
+  width: 200px;
 }
 
 body {
   padding: 0;
   margin: 0;
-  width: 400px;
+  width: 200px;
   font-size: 12px;
   box-sizing: content-box;
 }
 
-#main {
+body > main {
   padding: 10px;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-title {
+  font-size: 12px;
+}
+
+#counter {
+  padding: 4px 8px;
+  font-size: 24px;
+  color: blue;
+}
+
+.button-container {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jump-button {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #f3f3f3;
+  cursor: pointer;
+  transition: all ease .2s;
+}
+
+#jump-button:hover {
+  background: #eee;
 }
