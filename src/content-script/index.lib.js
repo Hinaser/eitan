@@ -13,7 +13,7 @@ async function loadPage(pageIndex){
 }
 
 function isLoggedIn(docFragment){
-  return !docFragment.querySelector("#fmLogin");
+  return Boolean(docFragment.querySelector(".topuser_logout"));
 }
 
 async function getSummary(){
