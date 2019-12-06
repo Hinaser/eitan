@@ -113,39 +113,40 @@ function createAttachButtonContainer(){
 }
 
 function attachWebApp(){
+  const rootId = "learn-english-with-eowp-root";
   if(!openEowpPlus || !onCloseEowpPlus){
     return;
   }
   
   const currentBodyFontSize = document.body.style.fontSize;
-  document.body.style.fontSize = "16px";
-  const currentBodyLineHeight = document.body.style.lineHeight;
-  document.body.style.lineHeight = "1.2";
   const currentOverflow = document.body.style.overflow;
-  document.body.style.overflow = "hidden";
+  
+  const onOpen = () => {
+    const root = document.querySelector(`#${rootId}`);
+    root.style.lineHeight = "1.2";
+    document.body.style.fontSize = "16px";
+    document.body.style.overflow = "hidden";
+  };
   
   const openAppButtonContainer = createAttachButtonContainer();
-  const onFirstOpen = () => {
-    openEowpPlus();
+  const onFirstOpen = async () => {
+    await openEowpPlus();
+    onOpen();
   };
   openAppButtonContainer.addEventListener("click", onFirstOpen);
   
   const onCloseApp = () => {
-    const rootId = "learn-english-with-eowp-root";
     const root = document.querySelector(`#${rootId}`);
     root.style.display = "none";
     
     openAppButtonContainer.removeEventListener("click", onFirstOpen);
   
     document.body.style.fontSize = currentBodyFontSize;
-    document.body.style.lineHeight = currentBodyLineHeight;
     document.body.style.overflow = currentOverflow;
   
     const reopenApp = () => {
       root.style.display = "block";
-      document.body.style.fontSize = "16px";
-      document.body.style.lineHeight = "1.2";
-      document.body.style.overflow = "hidden";
+      onOpen();
     };
   
     openAppButtonContainer.addEventListener("click", reopenApp);
