@@ -79,12 +79,13 @@ function gatherAndStoreWordList(rootEl = document){
   
   const savedWlStr = localStorage.getItem("wordList");
   if(savedWlStr){
+    const wordsToUpdate = [];
     const savedWl = JSON.parse(savedWlStr);
-    wl = savedWl
-      .concat(wl)
+    wl = wl
+      .concat(savedWl)
       .filter((w, i, arr) => {
         return i === arr.findIndex(w2 => {
-          return w2.word === w.word && isWordMeansEqual(w, w2);
+          return w2.word === w.word;
         });
       });
   }

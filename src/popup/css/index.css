@@ -1,13 +1,13 @@
 html {
   padding: 0;
   margin: 0;
-  width: 200px;
+  min-width: 200px;
 }
 
 body {
   padding: 0;
   margin: 0;
-  width: 200px;
+  min-width: 200px;
   font-size: 12px;
   box-sizing: content-box;
 }
@@ -23,7 +23,7 @@ body > main {
 }
 
 .counter-title {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 #counter {

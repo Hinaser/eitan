@@ -1,3 +1,4 @@
 window.onload = async () => {
-  await syncWordList(true);
+  await syncWordList();
+  attachWebApp();
 };
