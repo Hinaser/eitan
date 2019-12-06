@@ -40,7 +40,7 @@
     "css": [
       "content-script/web-app/css/main.d9e21768.chunk.css"
     ],
-    "run_at": "document_idle"
+    "run_at": "document_end"
   }],
   "homepage_url": "https://github.com/Hinaser",
   "incognito": "spanning",
@@ -52,6 +52,6 @@
     "https://eowp.alc.co.jp/*"
   ],
   "short_name": "ejr-test",
-  "version_name": "1.0.0",
+  "version_name": "0.0.1",
   "web_accessible_resources": []
 }
