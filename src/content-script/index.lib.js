@@ -119,6 +119,8 @@ function attachWebApp(){
   
   const currentBodyFontSize = document.body.style.fontSize;
   document.body.style.fontSize = "16px";
+  const currentOverflow = document.body.style.overflow;
+  document.body.style.overflow = "hidden";
   
   const openAppButtonContainer = createAttachButtonContainer();
   const onFirstOpen = () => {
@@ -134,6 +136,7 @@ function attachWebApp(){
     openAppButtonContainer.removeEventListener("click", onFirstOpen);
   
     document.body.style.fontSize = currentBodyFontSize;
+    document.body.style.overflow = currentOverflow;
   
     const reopenApp = () => {
       root.style.display = "block";
