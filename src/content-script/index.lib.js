@@ -118,6 +118,10 @@ function attachWebApp(){
     return;
   }
   
+  if(!isLoggedIn(document.body)){
+    return;
+  }
+  
   const currentBodyFontSize = document.body.style.fontSize;
   const currentOverflow = document.body.style.overflow;
   
