@@ -15,7 +15,7 @@
 
   "browser_action": {
     "default_icon": "logo128.png",
-    "default_title": "英辞郎Pro単語帳復習アプリ(非公式)",
+    "default_title": "英単 英辞郎Pro単語帳復習アプリ(非公式)",
     "default_popup": "popup/index.html"
   },
 
