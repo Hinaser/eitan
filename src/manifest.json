@@ -42,7 +42,7 @@
     ],
     "run_at": "document_end"
   }],
-  "homepage_url": "https://github.com/Hinaser",
+  "homepage_url": "https://github.com/Hinaser/eitan",
   "incognito": "spanning",
   "minimum_chrome_version": "47",
   "offline_enabled": false,
@@ -51,7 +51,7 @@
     "tabs",
     "https://eowp.alc.co.jp/*"
   ],
-  "short_name": "ejr-test",
+  "short_name": "eitan",
   "version_name": "0.0.1",
   "web_accessible_resources": []
 }
