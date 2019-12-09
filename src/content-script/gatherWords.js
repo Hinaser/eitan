@@ -53,7 +53,7 @@ function generateWordList(rootEl = document){
       return [];
     })();
     
-    const pronounceEl = meansRow.querySelector<HTMLElement>("span.attr > span.pron");
+    const pronounceEl = meansRow.querySelector("span.attr > span.pron");
     const pronounce = pronounceEl ? pronounceEl.innerText.replace(/、$/, "") : "";
     
     const Word = {
