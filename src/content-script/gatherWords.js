@@ -1,5 +1,13 @@
 function getWordWithKanaTrimmed(el){
-  return el.innerText;
+  let child = el.firstChild;
+  const texts = [];
+  while(child){
+    if(child.nodeType === 3){
+      texts.push(child.data);
+    }
+    child = child.nextSibling;
+  }
+  return texts.join("");
 }
 
 function generateWordList(rootEl = document){
