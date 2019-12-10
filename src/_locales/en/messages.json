@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "英辞郎 On The Web Pro プラス(非公式)",
+    "message": "英単 英辞郎Pro単語帳復習アプリ(非公式)",
     "description": "Name of the extension."
   },
   "extensionDescription": {
-    "message": "英辞郎On the Web Proの単語帳に登録した英単語を選択問題形式で復習できるアプリです。このアプリを利用するためには事前に有料の英辞郎On the Web Proの契約が必要です",
+    "message": "英辞郎On the Web Proの単語帳に登録した英単語を選択問題形式で復習できるアプリです。事前に有料の英辞郎On the Web Proの登録が必要です",
     "description": "Description of the extension."
   },
   "homepageUrl": {

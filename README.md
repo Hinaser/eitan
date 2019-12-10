@@ -12,7 +12,7 @@ __To build add-on for Chrome, follow the procedure below.__
 2. Zip the contents of src directory by:
   ```
   cd ./src
-  zip multiwindow_chrome-0.0.x.zip -r ./*
+  zip eitan_chrome-0.0.x.zip -r ./*
   ```
 3. Upload to [Chrome developer site](https://chrome.google.com/webstore/developer/dashboard)
 
